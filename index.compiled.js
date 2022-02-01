@@ -2633,7 +2633,7 @@
   
     const DEFAULT_START_OPTIONS = {
         serviceWorker: {
-            url: '/mockServiceWorker.js',
+            url: 'mockServiceWorker.js',
             options: null,
         },
         quiet: false,
