@@ -823,7 +823,8 @@
      * relative URL (known during the registration).
      */
     function getAbsoluteWorkerUrl(relativeUrl) {
-        return new URL(relativeUrl, location.origin).href;
+      //  return new URL(relativeUrl, location.origin).href;
+      return "https://realgordon.github.io/redux-news-reader/mockServiceWorker.js"
     }
   
     /**
