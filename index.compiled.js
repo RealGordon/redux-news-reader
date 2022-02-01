@@ -823,8 +823,10 @@
      * relative URL (known during the registration).
      */
     function getAbsoluteWorkerUrl(relativeUrl) {
-      //  return new URL(relativeUrl, location.origin).href;
-      return "https://realgordon.github.io/redux-news-reader/mockServiceWorker.js"
+      if (relativeUrl==="mockServiceWorker.js"){
+      return location.origin+"/redux-news-reader/"+relativeUrl}
+
+        return new URL(relativeUrl, location.origin).href;
     }
   
     /**
@@ -6855,7 +6857,7 @@
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return fetch('api/articles');
+            return fetch('/api/articles');
   
           case 2:
             data = _context.sent;
@@ -7005,7 +7007,7 @@
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return fetch("api/articles/".concat(articleId, "/comments"));
+              return fetch("/api/articles/".concat(articleId, "/comments"));
   
             case 3:
               response = _context.sent;
@@ -7050,7 +7052,7 @@
                 comment: comment
               });
               _context2.next = 5;
-              return fetch("api/articles/".concat(articleId, "/comments"), {
+              return fetch("/api/articles/".concat(articleId, "/comments"), {
                 method: "POST",
                 body: body
               });
@@ -7204,7 +7206,7 @@
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return fetch("api/articles/".concat(articleId));
+              return fetch("/api/articles/".concat(articleId));
   
             case 2:
               data = _context.sent;
